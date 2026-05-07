@@ -19,12 +19,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aura Gaia Festival — Um festival que você não vai apenas assistir",
+  title: "Aura Gaia Festival — Em breve",
   description:
-    "Música, natureza e experiências que reorganizam o corpo, a mente e as conexões humanas.",
+    "Aura Gaia Festival · Música, natureza e experiências que reorganizam o corpo, a mente e as conexões humanas. Em breve.",
   openGraph: {
-    title: "Aura Gaia Festival",
-    description: "Um festival que você não vai apenas assistir. Você vai viver.",
+    title: "Aura Gaia Festival — Em breve",
+    description: "Aura Gaia Festival · Em breve.",
   },
 };
 
