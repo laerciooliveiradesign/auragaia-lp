@@ -1,0 +1,21 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1920" height="1080" fill="white"/>
+<circle cx="283.967" cy="546.359" r="95.866" fill="#2BA5A5"/>
+<circle cx="510.495" cy="546.359" r="95.866" fill="#6B5B8D"/>
+<circle cx="276.866" cy="809.102" r="95.866" fill="#2E2640"/>
+<circle cx="737.023" cy="546.359" r="95.866" fill="#A64B6B"/>
+<circle cx="510.495" cy="809.102" r="95.866" fill="#C4883D"/>
+<circle cx="963.551" cy="546.359" r="95.866" fill="#C0607A"/>
+<circle cx="1190.08" cy="546.359" r="95.866" fill="#D07848"/>
+<circle cx="1416.61" cy="546.359" r="95.866" fill="#E8A038"/>
+<circle cx="1643.13" cy="546.359" r="95.866" fill="#F0C040"/>
+<circle cx="737.023" cy="809.102" r="95.866" fill="#F9F3EE"/>
+<rect x="188.101" y="176.032" width="1550.9" height="218.717" rx="28.4047" fill="url(#paint0_linear_3520_3463)"/>
+<defs>
+<linearGradient id="paint0_linear_3520_3463" x1="374.645" y1="283.3" x2="1571.01" y2="316.874" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2DA997"/>
+<stop offset="0.516457" stop-color="#BA3468"/>
+<stop offset="1" stop-color="#FFC032"/>
+</linearGradient>
+</defs>
+</svg>

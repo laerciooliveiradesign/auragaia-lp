@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+/* ==================== AURA GAIA THEME ==================== */
+@theme {
+  --color-violeta: #2E2640;
+  --color-violeta-deep: #1A1525;
+  --color-violeta-fog: #3E3555;
+  --color-dourado: #C4883D;
+  --color-dourado-claro: #E2B87A;
+  --color-creme: #F6F1E6;
+  --color-creme-fosco: #EDE5D0;
+  --color-turquesa: #2DA997;
+  --color-magenta: #BA3467;
+  --color-ambar: #FFBF31;
+
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+
+  --ease-natural: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-violeta-deep);
+    color: var(--color-creme);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-dourado);
+    color: var(--color-violeta-deep);
+  }
+}
+
+/* ==================== UTILITIES ==================== */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-feature-settings: "dlig", "ss01";
+}
+
+.text-gradient-aurora {
+  background: linear-gradient(120deg, var(--color-turquesa) 0%, var(--color-magenta) 55%, var(--color-ambar) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, var(--color-dourado-claro) 0%, var(--color-dourado) 60%, #8A5A22 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+.bg-aurora {
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(45, 169, 151, 0.18), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 25%, rgba(186, 52, 103, 0.22), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 60% 85%, rgba(255, 191, 49, 0.14), transparent 60%),
+    linear-gradient(180deg, var(--color-violeta-deep) 0%, var(--color-violeta) 100%);
+}
+
+/* Shimmer nas folhas do símbolo (aplicado por classe) */
+@keyframes aurora-shimmer {
+  0%, 100% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    filter: hue-rotate(12deg) brightness(1.12);
+  }
+}
+
+.animate-shimmer {
+  animation: aurora-shimmer 8s var(--ease-soft) infinite;
+}
+
+/* Halo pulsante */
+@keyframes halo-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.6;
+  }
+}
+
+.animate-halo {
+  animation: halo-pulse 6s var(--ease-soft) infinite;
+}
+
+/* Flutuação sutil */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float-gentle 8s ease-in-out infinite;
+}
+
+/* Partícula flutuante */
+@keyframes float-particle {
+  0% { transform: translate(0, 0); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.5; }
+  100% { transform: translate(var(--dx, 40px), var(--dy, -120px)); opacity: 0; }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  animation: float-particle var(--dur, 8s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Cursor magnético hover */
+.magnetic {
+  transition: transform 0.4s var(--ease-natural);
+}
+
+/* Liquid button gradient */
+.btn-aurora {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-dourado) 0%, var(--color-magenta) 50%, var(--color-turquesa) 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Reveal ao entrar */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s var(--ease-natural), transform 0.9s var(--ease-natural);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Divisor editorial */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196, 136, 61, 0.5), transparent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-violeta-deep); }
+::-webkit-scrollbar-thumb { background: var(--color-violeta); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-dourado); }
